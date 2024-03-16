@@ -1,0 +1,81 @@
+:~$: make
+make -C src all
+make[1]: Entering directory '/mnt/c/Users/Hoang/Desktop/mff/nastroje/03/zadani/mydb/src'
+[DEBUG]: running %.o
+gcc -g -Wall -c btree_int.c -o btree_int.o
+[DEBUG]: running %.o
+gcc -g -Wall -c client_comm.c -o client_comm.o
+[DEBUG]: running %.o
+gcc -g -Wall -c conds.c -o conds.o
+[DEBUG]: running %.o
+gcc -g -Wall -c config.c -o config.o
+[DEBUG]: running data.o
+gcc -g -Wall -c data.c
+[DEBUG]: running %.o
+gcc -g -Wall -c db_engine.c -o db_engine.o
+[DEBUG]: running %.o
+gcc -g -Wall -c db_main.c -o db_main.o
+[DEBUG]: running %.o
+gcc -g -Wall -c error.c -o error.o
+[DEBUG]: running %.o
+gcc -g -Wall -c index.c -o index.o
+[DEBUG]: running %.o
+gcc -g -Wall -c memory.c -o memory.o
+[DEBUG]: running %.o
+gcc -g -Wall -c parser_commands.c -o parser_commands.o
+[DEBUG]: running %.o
+gcc -g -Wall -c parser_conds.c -o parser_conds.o
+[DEBUG]: running %.o
+gcc -g -Wall -c query.c -o query.o
+[DEBUG]: running %.o
+gcc -g -Wall -c result.c -o result.o
+[DEBUG]: running %.o
+gcc -g -Wall -c server_comm.c -o server_comm.o
+[DEBUG]: running %.o
+gcc -g -Wall -c sql_parser.c -o sql_parser.o
+[DEBUG]: running %.o
+gcc -g -Wall -c strutil.c -o strutil.o
+[DEBUG]: running %.o
+gcc -g -Wall -c tabconf.c -o tabconf.o
+[DEBUG]: running %.o
+gcc -g -Wall -c tabdef.c -o tabdef.o
+[DEBUG]: running %.o
+gcc -g -Wall -c testadmin.c -o testadmin.o
+[DEBUG]: running %.o
+gcc -g -Wall -c testclient.c -o testclient.o
+[DEBUG]: running %.o
+gcc -g -Wall -c testserver.c -o testserver.o
+[DEBUG]: running %.o
+gcc -g -Wall -c textfileio.c -o textfileio.o
+--running archive
+ar -rcvs libmydb.a  btree_int.o  client_comm.o  conds.o  config.o  data.o  db_engine.o  db_main.o  error.o  index.o  memory.o  parser_commands.o  parser_conds.o  query.o  result.o  server_comm.o  sql_parser.o  strutil.o  tabconf.o  tabdef.o  testadmin.o  testclient.o  testserver.o  textfileio.o
+a - btree_int.o
+a - client_comm.o
+a - conds.o
+a - config.o
+a - data.o
+a - db_engine.o
+a - db_main.o
+a - error.o
+a - index.o
+a - memory.o
+a - parser_commands.o
+a - parser_conds.o
+a - query.o
+a - result.o
+a - server_comm.o
+a - sql_parser.o
+a - strutil.o
+a - tabconf.o
+a - tabdef.o
+a - testadmin.o
+a - testclient.o
+a - testserver.o
+a - textfileio.o
+[DEBUG]: running testadmin
+gcc -o testadmin -g -Wall -L. testadmin.c -lreadline -lhistory -lmydb
+[DEBUG]: running testclient
+gcc -o testclient -g -Wall -L. testclient.c client_comm.c -lmydb -lreadline -lhistory
+[DEBUG]: running testclient
+gcc -o testserver -g -Wall -L. testserver.c server_comm.c -lmydb
+make[1]: Leaving directory '/mnt/c/Users/Hoang/Desktop/mff/nastroje/03/zadani/mydb/src'
