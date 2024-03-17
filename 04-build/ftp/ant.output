@@ -1,0 +1,31 @@
+:~$: ant clean
+Buildfile: /mnt/c/Users/Hoang/Desktop/mff/nastroje/04-build/ftp/build.xml
+
+clean:
+   [delete] Deleting directory /mnt/c/Users/Hoang/Desktop/mff/nastroje/04-build/ftp/build
+   [delete] Deleting directory /mnt/c/Users/Hoang/Desktop/mff/nastroje/04-build/ftp/dist
+
+BUILD SUCCESSFUL
+Total time: 1 second
+:~$: ant dist
+Buildfile: /mnt/c/Users/Hoang/Desktop/mff/nastroje/04-build/ftp/build.xml
+
+initDist:
+    [mkdir] Created dir: /mnt/c/Users/Hoang/Desktop/mff/nastroje/04-build/ftp/dist
+
+initBuild:
+    [mkdir] Created dir: /mnt/c/Users/Hoang/Desktop/mff/nastroje/04-build/ftp/build
+
+build:
+    [javac] Compiling 139 source files to /mnt/c/Users/Hoang/Desktop/mff/nastroje/04-build/ftp/build
+    [javac] Note: Some input files use or override a deprecated API.
+    [javac] Note: Recompile with -Xlint:deprecation for details.
+    [javac] Note: Some input files use unchecked or unsafe operations.
+    [javac] Note: Recompile with -Xlint:unchecked for details.
+
+dist:
+      [jar] Building jar: /mnt/c/Users/Hoang/Desktop/mff/nastroje/04-build/ftp/dist/ftpserver-20240318.jar
+      [zip] Building zip: /mnt/c/Users/Hoang/Desktop/mff/nastroje/04-build/ftp/dist/sourceFiles.zip
+
+BUILD SUCCESSFUL
+Total time: 10 seconds

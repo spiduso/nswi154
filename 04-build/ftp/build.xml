@@ -1,0 +1,63 @@
+<project name="BuildFtp" default="build" basedir=".">
+    <property name="src.dir" value="./src" />
+    <property name="build.dir" value="./build" />
+    <property name="dist.dir" value="./dist" />
+    <property name="lib.dir" value="./lib" />
+
+    <target name="initBuild">
+        <mkdir dir="${build.dir}" />
+    </target>
+    
+    <target name="initDist">
+        <mkdir dir="${dist.dir}" />
+    </target>
+
+    <target name="clean">
+        <delete dir="${build.dir}" />
+        <delete dir="${dist.dir}" />
+    </target>
+
+    <path id="ftp.classpath">
+        <pathelement path="${java.class.path}" />
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar" />
+        </fileset>
+    </path>
+
+    <target name="build" depends="initBuild">
+        <javac srcdir="${src.dir}"
+            destdir="${build.dir}"
+            includeantruntime="false">
+            <classpath refid="ftp.classpath" />
+        </javac>
+    </target>
+
+    <target name="dist" depends="initDist, build">
+        <tstamp>
+            <format property="build.time" pattern="yyyyMMdd"/>
+        </tstamp>
+         
+        <jar destfile="${dist.dir}/ftpserver-${build.time}.jar" basedir="${build.dir}">
+            <manifest>
+                <attribute name="Project" value="FTP"/>
+                <attribute name="BuildDate" value="${build.time}"/>
+                <attribute name="Main-Class" value="org.apache.ftpserver.commandline.CommandLine"/>
+            </manifest>
+        </jar>
+
+        <zip basedir="${src.dir}"
+            destfile="${dist.dir}/sourceFiles.zip">
+        </zip>
+    </target>
+
+    <target name="run" depends="dist">
+        <tstamp>
+            <format property="build.time" pattern="yyyyMMdd"/>
+        </tstamp>
+
+        <available file="${dist.dir}/ftpserver-${build.time}.jar" property="have.jar"/>
+        <fail unless="have.jar">Jar file does not exist or is obsolete</fail>
+
+        <java jar="${dist.dir}/ftpserver-${build.time}.jar" fork="true"/>
+    </target>
+</project>
