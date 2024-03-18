@@ -1,0 +1,43 @@
+cmake_minimum_required (VERSION 3.10)
+project (mydb)
+
+set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
+
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${SRC_DIR})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${SRC_DIR})
+
+set(SRC_FILES "${SRC_DIR}/btree_int.c"
+"${SRC_DIR}/client_comm.c"
+"${SRC_DIR}/conds.c"
+"${SRC_DIR}/config.c"
+"${SRC_DIR}/data.c"
+"${SRC_DIR}/db_engine.c"
+"${SRC_DIR}/db_main.c"
+"${SRC_DIR}/error.c"
+"${SRC_DIR}/index.c"
+"${SRC_DIR}/memory.c"
+"${SRC_DIR}/parser_commands.c"
+"${SRC_DIR}/parser_conds.c"
+"${SRC_DIR}/query.c"
+"${SRC_DIR}/result.c"
+"${SRC_DIR}/server_comm.c"
+"${SRC_DIR}/sql_parser.c"
+"${SRC_DIR}/strutil.c"
+"${SRC_DIR}/tabconf.c"
+"${SRC_DIR}/tabdef.c"
+"${SRC_DIR}/testadmin.c"
+"${SRC_DIR}/testclient.c"
+"${SRC_DIR}/testserver.c"
+"${SRC_DIR}/textfileio.c"
+"${SRC_DIR}/textfileio.c")
+
+add_library(-mydb STATIC ${SRC_FILES})
+
+add_executable(testclient ${SRC_DIR}/testclient.c ${SRC_DIR}/client_comm.c)
+target_link_libraries(testclient -mydb -lreadline -lhistory)
+
+add_executable(testserver ${SRC_DIR}/testserver.c ${SRC_DIR}/server_comm.c)
+target_link_libraries(testserver -mydb)
+
+add_executable(testadmin ${SRC_DIR}/testadmin.c)
+target_link_libraries(testadmin -mydb -lreadline -lhistory)
