@@ -1,4 +1,4 @@
-# 04 - build
+# 04 - build - ant
 
 Hoang Anh Tuan
 
@@ -61,23 +61,7 @@ Ant: Write the Ant build script for the FTP server - the file "ftp/build.xml".
 - Test the Ant build script by executing "ant clean" followed by "ant dist".
        Paste the output of Ant here.
 
-Maven: Write the Maven build script for the FTP server - the file "ftp/pom.xml".
-
-- The script has to support the following actions: building, creating of a JAR file, run/execute, clean.
-- Make sure that everything works as expected.
-- Follow the standard concepts and best practices associated with Maven.
-- Test the Maven build script and paste the output of Maven here.
-
-Gradle: Write the build.gradle script for Gradle that closely mimics functionality required of the scripts created for Ant (build.xml) or Maven (pom.xml).
-
-- Make sure that everything works properly (as expected).
-- Follow the standard concepts and best practices associated with Gradle.
-
-CMake: Write the necessary configuration files and scripts for CMake that can be used instead of Makefiles created within a previous homework (Make) for building the "mydb" program.
-
-- Ensure that everything works properly.
-- Follow the standard concepts and best practices associated with CMake.
-
+| Ant output is located [here](https://github.com/spiduso/nswi154/blob/main/04-build-ant/ftp/ant.output)
 ## Survey
 
 We use the survey to evaluate the labs (tasks) and homework assignments.
@@ -87,16 +71,16 @@ Write your answer under the corresponding question.
 
 (1) How new was the topic and content of the lab for you?
      (1 - brand new, 10 - I already knew everything)
-
+- 1
 (2) Do you think that the content of this lab was useful?
      (1 - useless or too trivial, 10 - very useful)
-
+- 8
 (3) How do you evaluate the level of complexity of the homework assignment?
      (1 - too trivial, 5-6 - just about right, 10 - too demanding or complex)
-
+- 7
 (4) How do you evaluate your prior experience with the tool in the context of the homework assignment?
      (1 - I already know and can use everything, 10 - I tried everything practically for the first time)
-
+- 9
 (5) How much time (in minutes) did you spend working on the homework assignment?
-
+- 360
 (6) Additional space for your own comments on the lab and homework assignment:
